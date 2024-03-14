@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="5">
+    <title>Stream Status</title>
+    <style>
+        /* Style pour le texte */
+        body {
+            font-size: 20px;
+            width: 100%; /* Définir la largeur du corps sur 100% pour occuper toute la largeur de la page */
+            text-align: center; /* Centrer le texte horizontalement */
+            margin: 0; /* Supprimer les marges par défaut du corps */
+            padding: 0; /* Supprimer les remplissages par défaut du corps */
+        }
+
+        /* Style pour le statut actif */
+        .stream-active {
+            color: green;
+        }
+
+        /* Style pour le statut inactif */
+        .stream-inactive {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Stream Status</h1>
+    <!-- Afficher le statut du flux avec la classe CSS correspondante -->
+    <p>Stream Status: <span class="{{ stream_status_class }}">{{ stream_status }}</span></p>
+</body>
+</html>

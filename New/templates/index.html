@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaming Control</title>
+    <style>
+        /* Style pour le texte */
+        body {
+            font-size: 24px;
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style pour les boutons */
+        .btn {
+            font-size: 24px;
+            padding: 20px 40px;
+            margin: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            display: inline-block;
+            width: auto;
+        }
+        
+        /* Style pour le bouton de démarrage */
+        .btn-start {
+            background-color: green;
+            color: white;
+        }
+        
+        /* Style pour le bouton d'arrêt */
+        .btn-stop {
+            background-color: red;
+            color: white;
+        }
+        
+        /* Style pour les iframes */
+        iframe {
+            width: 100%;
+            height: 50vh;
+            margin-top: 20px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Streaming Control</h1>
+    
+    <!-- Menu déroulant pour sélectionner la carte son -->
+    <form action="/start_stream" method="get">
+        <label for="audioDevice">Select Audio Device:</label>
+        <select name="audioDevice" id="audioDevice">
+            <option value="hw:1,0">Device 1</option>
+            <option value="hw:2,0">Device 2</option>
+            <option value="hw:3,0">Device 3</option>
+            <option value="hw:4,0">Device 4</option>
+            <!-- Ajoutez d'autres options en fonction de vos cartes son disponibles -->
+        </select>
+        <br>
+        <button class="btn btn-start" type="submit">Start Stream</button>
+    </form>
+    
+    <!-- Bouton pour arrêter le streaming -->
+    <button class="btn btn-stop" onclick="confirmStop()">Stop Stream</button>
+
+    <script>
+        function confirmStop() {
+            if (confirm("Are you sure you want to stop the stream?")) {
+                window.location.href = "/stop_stream"; // Rediriger vers la route pour arrêter le flux
+            }
+        }
+    </script>
+
+    <!-- IFRAME pour afficher le statut du flux -->
+    <iframe src="/stream_status"></iframe>
+    
+    <!-- IFRAME pour afficher le statut du flux -->
+    <iframe src="/commands"></iframe>
+</body>
+</html>

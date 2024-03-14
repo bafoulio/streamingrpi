@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitch Commands</title>
+    <style>
+        /* Styles pour les boutons */
+        .button-container {
+            display: flex; /* Utiliser un affichage flex pour les boutons */
+            flex-wrap: wrap; /* Permettre aux boutons de passer à la ligne si nécessaire */
+            justify-content: space-evenly; /* Espacement équitable entre les boutons */
+        }
+
+        .button-wrapper {
+            width: 100%; /* Définir une largeur de 100% pour les conteneurs de boutons */
+            margin-bottom: 10px; /* Ajouter un espacement entre les boutons */
+        }
+
+        .button {
+            font-size: 20px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%; /* Définir la largeur des boutons sur 100% pour occuper toute la largeur du conteneur */
+            box-sizing: border-box; /* Inclure les rembourrages et les bordures dans la largeur */
+        }
+
+        /* Styles pour les différentes couleurs de boutons */
+        .button-blue {
+            background-color: blue;
+            color: white;
+        }
+
+        .button-yellow {
+            background-color: yellow;
+            color: black;
+        }
+
+        .button-orange {
+            background-color: orange;
+            color: white;
+        }
+
+        .button-purple {
+            background-color: purple;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Twitch Commands</h1>
+    <div class="button-container">
+        <div class="button-wrapper">
+            <form action="/send_command/start" method="get">
+                <button class="button button-blue" type="submit">Start obs</button>
+            </form>
+        </div>
+        <div class="button-wrapper">
+            <form action="/send_command/stop" method="get">
+                <button class="button button-yellow" type="submit">Stop obs</button>
+            </form>
+        </div>
+        <div class="button-wrapper">
+            <form action="/send_command/privacy" method="get">
+                <button class="button button-orange" type="submit">Privacy Scene</button>
+            </form>
+        </div>
+        <div class="button-wrapper">
+            <form action="/send_command/live" method="get">
+                <button class="button button-purple" type="submit">Live Scene</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
